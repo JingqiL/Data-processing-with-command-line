@@ -22,6 +22,8 @@ jq '[.] | map({Country: .pubcountry}) | .[]' 1.ndjson| jq -s . | jq 'group_by(.C
 #Make well-formatted .ndjson back to one line .ndjson.
 jq -c '.' file
 
-#export .ndjson to .csv
-jq '. | [.Var1,.Var2] | @csv' file.ndjson | 
+#export .ndjson to .csv. USE -r TO KEEP THE ORIGINAL FORMAT IN THE FILE.
+jq -r '. | [.Var1,.Var2] | @csv' file.ndjson > file.csv
+
+#
 
