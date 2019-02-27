@@ -25,5 +25,10 @@ jq -c '.' file
 #export .ndjson to .csv. USE -r TO KEEP THE ORIGINAL FORMAT IN THE FILE.
 jq -r '. | [.Var1,.Var2] | @csv' file.ndjson > file.csv
 
-#
+#Delete columns.
+jq '. | del(.ar1,.var2)' file.ndjson > file1.ndjson
+
+#Select records that meet conditions.
+jq '. | select(.var1 == .var2)' file.ndjson > file1.ndjson
+
 
