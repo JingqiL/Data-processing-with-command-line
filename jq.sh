@@ -31,4 +31,4 @@ jq '. | del(.ar1,.var2)' file.ndjson > file1.ndjson
 #Select records that meet conditions.
 jq '. | select(.var1 == .var2)' file.ndjson > file1.ndjson
 
-
+#
